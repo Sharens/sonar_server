@@ -4,11 +4,9 @@ WORKDIR /app
 
 # Kopiowanie modułu i kodu
 COPY go.mod main.go .
-# Pobranie i uporządkowanie zależności
-RUN go mod tidy
-
-# Build aplikacji
-RUN go build -o server .
+# Pobranie zależności i budowanie aplikacji
+RUN go mod tidy && \
+    go build -o server .
 
 EXPOSE 8080
 CMD ["./server"]

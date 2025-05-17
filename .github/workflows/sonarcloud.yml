@@ -32,22 +32,31 @@ jobs:
 
     - name: Build and test
       run: |
+        # Create necessary directories
+        mkdir -p server/test-results
+        
         # Install Go dependencies
         cd server
         go mod download
         
         # Run Go tests with coverage
-        go test -v -coverprofile=coverage.out ./...
+        go test -v -coverprofile=../coverage.out ./...
         
         # Generate test report in JUnit format
-        mkdir -p test-results
         go test -v -json ./... > test-results/test-report.json
         
         # Back to root
         cd ..
         
         # Run client tests with coverage
-        npm test -- --coverage --watchAll=false
+        npm test -- --coverage --watchAll=false --testResultsProcessor="jest-junit"
+        
+        # Move coverage files to standard location
+        cp coverage/coverage/lcov.info coverage/lcov.info 2>/dev/null || true
+        
+        # Debug: List generated files
+        echo "Generated coverage files:"
+        find . -name "coverage*" -o -name "*.xml" -o -name "*.out" | xargs ls -la
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master

@@ -50,8 +50,9 @@ const Payments = () => {
             <h2>Informacje o płatności</h2>
             <div className="payment-form">
                 <div className="form-group">
-                    <label>Metoda płatności:</label>
+                    <label htmlFor="payment-method">Metoda płatności:</label>
                     <select 
+                        id="payment-method"
                         value={paymentMethod}
                         onChange={(e) => setPaymentMethod(e.target.value)}
                         required
@@ -63,8 +64,9 @@ const Payments = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Numer karty:</label>
+                    <label htmlFor="card-number">Numer karty:</label>
                     <input
+                        id="card-number"
                         type="text"
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
@@ -74,8 +76,9 @@ const Payments = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Data ważności:</label>
+                    <label htmlFor="card-expiry">Data ważności:</label>
                     <input
+                        id="card-expiry"
                         type="text"
                         value={cardExpiry}
                         onChange={(e) => setCardExpiry(e.target.value)}
@@ -85,8 +88,9 @@ const Payments = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>CVC:</label>
+                    <label htmlFor="card-cvc">CVC:</label>
                     <input
+                        id="card-cvc"
                         type="text"
                         value={cardCVC}
                         onChange={(e) => setCardCVC(e.target.value)}

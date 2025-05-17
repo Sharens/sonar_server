@@ -1,24 +1,32 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useMemo, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
-    const addToCart = (item) => {
+    const addToCart = useCallback((item) => {
         setCartItems(prev => [...prev, item]);
-    };
+    }, []);
 
-    const removeFromCart = (itemId) => {
+    const removeFromCart = useCallback((itemId) => {
         setCartItems(prev => prev.filter(item => item.id !== itemId));
-    };
+    }, []);
 
-    const clearCart = () => {
+    const clearCart = useCallback(() => {
         setCartItems([]);
-    };
+    }, []);
+
+    const contextValue = useMemo(() => ({
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart
+    }), [cartItems, addToCart, removeFromCart, clearCart]);
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
+        <CartContext.Provider value={contextValue}>
             {children}
         </CartContext.Provider>
     );
@@ -26,6 +34,10 @@ export const CartProvider = ({ children }) => {
 
 export const useCart = () => {
     return useContext(CartContext);
+};
+
+CartProvider.propTypes = {
+    children: PropTypes.node.isRequired
 };
 
 export default CartContext;
