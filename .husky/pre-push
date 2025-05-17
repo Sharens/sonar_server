@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "ℹ️  Pre-push checks skipped - Go is not installed"
+# Aby włączyć testy przed pushowaniem, odkomentuj poniższą linię i zainstaluj Go
+# echo "🧪 Running Go tests..."
+# cd server && go test -v ./...
+

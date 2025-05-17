@@ -25,7 +25,10 @@ var products = []Product{
 
 func productsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(products)
+	if err := json.NewEncoder(w).Encode(products); err != nil {
+		http.Error(w, "Błąd podczas przetwarzania danych", http.StatusInternalServerError)
+		return
+	}
 }
 
 func paymentsHandler(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +39,10 @@ func paymentsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	// Można tu walidować dane płatności
 	response := map[string]interface{}{ "success": true, "message": "Płatność przetworzona poprawnie" }
-	json.NewEncoder(w).Encode(response)
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		http.Error(w, "Błąd podczas przetwarzania danych", http.StatusInternalServerError)
+		return
+	}
 }
 
 func main() {
