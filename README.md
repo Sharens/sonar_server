@@ -4,11 +4,11 @@ Aplikacja kliencka napisana w React.js z serwerem w Go, zintegrowana z SonarClou
 
 ## Status SonarCloud
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=your-org_sonar_server&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=your-org_sonar_server)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=your-org_sonar_server&metric=bugs)](https://sonarcloud.io/summary/new_code?id=your-org_sonar_server)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=your-org_sonar_server&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=your-org_sonar_server)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=your-org_sonar_server&metric=coverage)](https://sonarcloud.io/summary/new_code?id=your-org_sonar_server)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=your-org_sonar_server&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=your-org_sonar_server)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Sharens_sonar_server&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Sharens_sonar_server)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Sharens_sonar_server&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Sharens_sonar_server)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Sharens_sonar_server&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Sharens_sonar_server)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Sharens_sonar_server&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Sharens_sonar_server)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Sharens_sonar_server&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Sharens_sonar_server)
 
 ## Opis zadania
 
